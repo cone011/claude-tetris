@@ -54,7 +54,45 @@
       <div class="overlay-box">
         <p id="overlay-title">GAME OVER</p>
         <p id="overlay-score"></p>
+
+        <div id="name-entry" class="name-entry hidden">
+          <p class="name-entry-label">¡Nuevo récord! Ingresa tu nombre:</p>
+          <input type="text" id="player-name-input" maxlength="12" placeholder="Nombre" autocomplete="off" />
+          <button id="save-score-btn">Guardar</button>
+        </div>
+
+        <div id="overlay-scores-panel" class="scores-panel hidden">
+          <p class="scores-title">TOP 5</p>
+          <ol id="overlay-scores-list" class="scores-list"></ol>
+        </div>
+
         <button id="restart-btn">Reiniciar</button>
+        <button id="reset-records-btn-overlay" class="secondary-btn hidden">Borrar records</button>
+      </div>
+    </div>
+
+    <div id="start-screen" class="overlay">
+      <div class="overlay-box start-box">
+        <p id="start-title">TETRIS</p>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="label">MEJOR COMBO</span>
+            <span class="value" id="start-best-combo">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="label">LÍNEAS MÁXIMAS</span>
+            <span class="value" id="start-max-lines">0</span>
+          </div>
+        </div>
+
+        <div class="scores-panel">
+          <p class="scores-title">TOP 5</p>
+          <ol id="start-scores-list" class="scores-list"></ol>
+        </div>
+
+        <button id="play-btn">Jugar</button>
+        <button id="reset-records-btn" class="secondary-btn">Borrar records</button>
       </div>
     </div>
   </div>

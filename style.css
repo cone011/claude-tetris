@@ -26,6 +26,17 @@
   --toggle-bg: #22223a;
   --toggle-border: #3a3a5a;
   --toggle-knob: #7aa2f7;
+  --scores-border: #2a2a3a;
+  --scores-bg: #1a1a25;
+  --scores-highlight-bg: rgba(122, 162, 247, 0.18);
+  --scores-highlight-text: #7aa2f7;
+  --input-bg: #1a1a25;
+  --input-border: #3a3a5a;
+  --input-text: #e0e0e0;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: #3a3a5a;
+  --btn-secondary-text: #888;
+  --btn-secondary-hover: #22223a;
 }
 
 [data-theme="light"] {
@@ -50,6 +61,17 @@
   --toggle-bg: #e4e6f2;
   --toggle-border: #c8cadb;
   --toggle-knob: #3a5bc7;
+  --scores-border: #c8cadb;
+  --scores-bg: #ffffff;
+  --scores-highlight-bg: rgba(58, 91, 199, 0.12);
+  --scores-highlight-text: #3a5bc7;
+  --input-bg: #ffffff;
+  --input-border: #c8cadb;
+  --input-text: #23232f;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: #c8cadb;
+  --btn-secondary-text: #55556b;
+  --btn-secondary-hover: #e4e6f2;
 }
 
 body {
@@ -219,6 +241,10 @@ kbd {
   display: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .overlay-box {
   text-align: center;
   display: flex;
@@ -256,4 +282,151 @@ kbd {
 
 #restart-btn:hover {
   background: var(--btn-hover);
+}
+
+/* ---- Botones secundarios ---- */
+.secondary-btn {
+  margin-top: 4px;
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.15s;
+}
+
+.secondary-btn:hover {
+  background: var(--btn-secondary-hover);
+}
+
+/* ---- Pantalla de inicio ---- */
+#start-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: var(--title-color);
+  text-shadow: 0 0 20px var(--title-shadow);
+}
+
+.start-box {
+  width: 260px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-item .value {
+  font-size: 20px;
+}
+
+/* ---- Tabla de récords ---- */
+.scores-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scores-title {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--label-color);
+  font-weight: 600;
+  text-align: center;
+}
+
+.scores-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid var(--scores-border);
+  background: var(--scores-bg);
+  border-radius: 6px;
+  padding: 8px 12px;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.score-name {
+  color: var(--text);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score-value {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--value-color);
+}
+
+.score-row.score-highlight {
+  background: var(--scores-highlight-bg);
+}
+
+.score-row.score-highlight .score-name,
+.score-row.score-highlight .score-value {
+  color: var(--scores-highlight-text);
+}
+
+.score-empty {
+  text-align: center;
+  font-size: 12px;
+  color: var(--control-text);
+  padding: 4px;
+}
+
+/* ---- Ingreso de nombre (nuevo récord) ---- */
+.name-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.name-entry-label {
+  font-size: 13px;
+  color: var(--overlay-score);
+}
+
+#player-name-input {
+  width: 100%;
+  max-width: 200px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+#player-name-input:focus {
+  outline: none;
+  border-color: var(--value-color);
 }
